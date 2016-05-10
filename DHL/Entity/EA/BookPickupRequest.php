@@ -19,7 +19,7 @@
  * Project:     DHL API
  *
  * @author      Al-Fallouji Bashar
- * @version     0.1
+ * @version     0.2
  */
 
 namespace DHL\Entity\EA; 
@@ -54,9 +54,9 @@ class BookPickupRequest extends Base
      */
     protected $_bodyParams = array(
         'Requestor' => array(
-            'type' => 'string',
+            'type' => 'Requestor',
             'required' => false,
-            'subobject' => false,
+            'subobject' => true,
         ), 
         'Place' => array(
             'type' => 'Place',
@@ -64,19 +64,19 @@ class BookPickupRequest extends Base
             'subobject' => true,
         ), 
         'Pickup' => array(
-            'type' => 'string',
+            'type' => 'Pickup',
             'required' => false,
-            'subobject' => false,
+            'subobject' => true,
         ), 
         'PickupContact' => array(
-            'type' => 'string',
+            'type' => 'PickupContact',
             'required' => false,
-            'subobject' => false,
+            'subobject' => true,
         ), 
         'ShipmentDetails' => array(
             'type' => 'ShipmentDetails',
             'required' => false,
             'subobject' => true,
-        ), 
+        ),
     );
 }

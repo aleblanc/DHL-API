@@ -19,7 +19,7 @@
  * Project:     DHL API
  *
  * @author      Al-Fallouji Bashar
- * @version     0.1
+ * @version     0.2
  */
 
 namespace DHL\Datatype\EA; 
@@ -41,21 +41,34 @@ class Place extends Base
      * @var array
      */
     protected $_params = array(
-        'ResidenceOrBusiness' => array(
+        'LocationType' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+        ), 'ResidenceOrBusiness' => array(
             'type' => 'ResidenceOrBusiness',
             'required' => false,
             'subobject' => false,
             'comment' => 'Identifies if a location is a business, residence, or both (B:Business, R:Residence, C:Business Residence)',
             'length' => '1',
             'enumeration' => 'B,R,C',
-        ), 
+        ),
         'CompanyName' => array(
             'type' => 'CompanyNameValidator',
             'required' => false,
             'subobject' => false,
             'comment' => 'Name of company / business',
             'maxLength' => '35',
-        ), 
+        ),
+        'Address1' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+        ), 'PackageLocation' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+        ),
         'AddressLine' => array(
             'type' => 'AddressLine',
             'required' => false,
@@ -76,7 +89,12 @@ class Place extends Base
             'subobject' => false,
             'comment' => 'ISO country codes',
             'length' => '2',
-        ), 
+        ),
+        'StateCode' => array(
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+        ),
         'DivisionCode' => array(
             'type' => 'StateCode',
             'required' => false,

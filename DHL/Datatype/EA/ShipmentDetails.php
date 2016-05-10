@@ -19,7 +19,7 @@
  * Project:     DHL API
  *
  * @author      Al-Fallouji Bashar
- * @version     0.1
+ * @version     0.2
  */
 
 namespace DHL\Datatype\EA; 
@@ -41,16 +41,48 @@ class ShipmentDetails extends Base
      * @var array
      */
     protected $_params = array(
+        'AccountType'=>array(
+            'type' => 'AccountType',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'CustData',
+            'minLength' => '1',
+            'maxLength' => '100',
+        ),
+        'AccountNumber'=>array(
+            'type' => 'AccountNumber',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'CustData',
+            'minLength' => '1',
+            'maxLength' => '100',
+        ),
+        'AWBNumber'=>array(
+            'type' => 'AWBNumber',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'CustData',
+            'minLength' => '1',
+            'maxLength' => '100',
+        ),
         'NumberOfPieces' => array(
             'type' => 'positiveInteger',
             'required' => false,
             'subobject' => false,
-        ), 
+        ),
+        'BillToAccountNumber'=>array(
+            'type' => 'BillToAccountNumber',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'CustData',
+            'minLength' => '1',
+            'maxLength' => '100',
+        ),
         'Pieces' => array(
             'type' => 'Pieces',
             'required' => false,
-            'subobject' => true,
-        ), 
+            'subobject' => false,
+        ),
         'Weight' => array(
             'type' => 'Weight',
             'required' => false,
@@ -173,6 +205,22 @@ class ShipmentDetails extends Base
             'comment' => 'CustData',
             'minLength' => '1',
             'maxLength' => '100',
-        ), 
+        ),
+        'InsuredCurrencyCode'=>array(
+            'type' => 'InsuredCurrencyCode',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'CustData',
+            'minLength' => '1',
+            'maxLength' => '100',
+        ),
+        'SpecialService'=>array(
+            'type' => 'SpecialService',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'CustData',
+            'minLength' => '1',
+            'maxLength' => '100',
+        )
     );
 }

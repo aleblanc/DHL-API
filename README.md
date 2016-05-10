@@ -1,5 +1,10 @@
-    
-## Authors & contact
+DHL API v 0.2
+
+## Authors
+
+Alexandre LEBLANC
+=> upgrade API DHL for BookPickupRequest service for EA region
+=> add Pickup / PickupContact / Resquestor / resquestorContact
 
 
 Al-Fallouji Bashar 
